@@ -1,0 +1,10 @@
+{
+    "/api/": {
+        "target": "https://adb-285070002293575.15.azuredatabricks.net/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "changeOrigin": true
+    }
+}

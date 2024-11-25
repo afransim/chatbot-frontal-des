@@ -1,0 +1,6 @@
+{
+    "globalHeaders": {
+      "Access-Control-Allow-Origin": "https://adb-4262183451853812.12.azuredatabricks.net",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+    }
+}

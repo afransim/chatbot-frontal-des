@@ -1,0 +1,44 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .left {
+    align-self: flex-start;
+  }
+  
+  .right {
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .logo {
+    background-image: url(../../assets/img/idb_h_blanc.png) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin: 0 2rem;
+    height: 2rem;
+    width: 10%;
+  }
+  
+  
+  .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+
+  div.links a:hover {
+    text-decoration: underline;
+  }
+  
+  .powered-by {
+    color: lightgrey;
+    font-size: 12px;
+  }

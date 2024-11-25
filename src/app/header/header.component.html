@@ -1,0 +1,22 @@
+<div class="header">
+  <a href="https://web.gencat.cat/ca/inici" target="_blank" class="logo"></a>
+  <div class="header-right">
+  <a href="https://ovt.gencat.cat/carpetaciutadana360#/acces"><i class="pi pi-user m-r-10"></i>{{'private-area' | translate}}</a>
+    <span class="separator">|</span>
+    <a href="https://web.gencat.cat/en/contacte/">{{'contact' | translate}}</a>
+    <span class="separator">|</span>
+    <div class="language-selector" (click)="toggleDropdown()">
+      <span>{{ selectedLanguage }} </span>
+      <i [@rotate]="dropdownOpen ? 'up' : 'down'" class="pi pi-chevron-down f-size-75"></i>
+      @if (dropdownOpen) {
+        <div class="dropdown-menu">
+          @for (lang of languages; track lang) {
+          <div (click)="changeLanguage(lang.value); $event.stopPropagation();">
+            {{ lang.name }}
+          </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

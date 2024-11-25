@@ -1,0 +1,17 @@
+{
+    "private-area": "Área privada",
+    "contact": "Contacto",
+    "directory-social": "Directorio de redes sociales",
+    "directory-app": "Directorio de apps",
+    "legal-advice": "Aviso legal",
+    "cookie-policy": "Política de cookies",
+    "about-us": "Sobre gencat",
+    "accessibility": "Accesibilidad",
+    "web-map": "Mapa web",
+    "ask-me": "Pregúntame cualquier cosa...",
+    "no-docs": "Ningún documento seleccionado",
+    "assistant-title": "Asistente Gencat",
+    "select-doc": "Selecciona un documento del listado para preguntarme sobre él",
+    "no-doc-found": "No se ha encontrado ningún documento",
+    "error-communication": "Lo siento, ha habido un error. Por favor, inténtalo de nuevo más tarde."
+}

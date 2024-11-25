@@ -1,0 +1,14 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 !important;
+}
+
+html {
+    font-size: 14px;
+}
+
+app-landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

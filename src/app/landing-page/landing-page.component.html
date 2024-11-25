@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="chat-header">
+  <div class="secondary-header">
+    <p class="title-gencat">{{ 'assistant-title' | translate }}</p>
+  </div>
+</div>
+<div class="container">
+  
+  <div class="chat-container">
+    @if (loading) {
+      <div class="loading-container">
+        <p-progressSpinner ariaLabel="loading" />
+      </div>
+    }
+    <div class="messages-container" #messagesContainer>
+    <div class="chat-box">
+      @for (message of messages; track message) {
+        @if (message.role === 'assistant') {
+          <div class="bot-message-container">
+            <div class="bot-icon"></div>
+            <div class="bot-message" [innerHTML]="message.content"></div>
+          </div>
+        }
+        @else {
+          <div class="user-message">
+            {{ message.content }}
+          </div>
+        }
+      }
+    </div>
+    </div>
+    <div class="search">
+      <div class="drop-container">
+        <label class="fs-12"> {{'select-doc' | translate}} </label>
+        <div class="flex-container">
+          <p-dropdown 
+          id="doc-dropdown"
+          [options]="documents"
+          [(ngModel)]="selectedDocument"
+          optionLabel="documents"
+          [filter]="true"
+          filterBy="name"
+          [showClear]="true"
+          [virtualScroll]="true"
+          [virtualScrollItemSize]="38"
+          [disabled]="attachedDocuments.length > 0"
+          emptyFilterMessage="{{'no-doc-found' | translate}}"
+          placeholder="{{ 'no-docs' | translate }}">
+              <ng-template pTemplate="selectedItem" let-selectedDocument>
+                  <div class="flex align-items-center gap-2">
+                      <div>{{ selectedDocument.name }}</div>
+                  </div>
+              </ng-template>
+              <ng-template let-document pTemplate="item">
+                  <div class="flex align-items-center gap-2">
+                      <div>{{ document.name }}</div>
+                  </div>
+              </ng-template>
+          </p-dropdown>
+          <input type="file" #fileInput class="d-none" (change)="onFileSelected($event)" />
+          <div class="attached-documents">
+            <span *ngFor="let doc of attachedDocuments" class="document-bubble">
+              {{doc.name}} <i class="pi pi-times close-attach" (click)="removeDocument(doc)"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <p-inputGroup>
+        <input type="text" class="chat-textbox" pInputText [(ngModel)]="searchInput" placeholder="{{'ask-me' | translate}}" (keydown.enter)="send($event)"/>
+        <button type="button" pButton icon="pi pi-paperclip" class="p-button-info b-attach" (click)="attach()"></button>
+
+        <button type="button" pButton class="p-button-success b-send" [class.b-send-active]="searchInput.length > 0 && !loading" (click)="send()">
+        @if (searchInput.length > 0 && !loading) {
+          <div class="send-bg send-img-b"></div>
+        }
+        @else {
+          <div class="send-bg send-img-g"></div>
+        }
+      </button>
+      </p-inputGroup>
+    </div>
+    </div>
+  </div>
+<app-footer></app-footer>

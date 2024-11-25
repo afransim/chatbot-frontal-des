@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: 3rem;
+  }
+
+  .header_img {
+    width: auto;
+    flex-direction: column;
+  }
+  
+  .logo {
+    background-image: url(../../assets/img/gencat_cat_blanc.png) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin: 0 2rem;
+    height: 90%;
+    width: 10%;
+  }
+  
+  .language-selector {
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  input.p-inputtext.p-component {
+    width: 30rem;
+  }
+
+  .separator {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .f-size-75 {
+    font-size: 0.75rem;
+  }
+
+  .m-r-10 {
+    margin-right: 10px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    color: #333333;
+    top: 100%;
+    right: -20px;
+    min-width: 100px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-menu div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu div:hover {
+    text-decoration: underline;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right a,
+  .header-right .search {
+    color: white;
+    text-decoration: none;
+  }
+
+  div.header-right a:hover {
+    text-decoration: underline;
+  }
